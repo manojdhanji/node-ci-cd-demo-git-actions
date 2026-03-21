@@ -1,0 +1,10 @@
+name: Greet User
+on: push
+jobs:
+  greet:
+    runs-on: ubuntu
+    steps:
+      - name: greet user in en
+        run: echo "Hello $USER"
+      - name: greet user in fr
+        run: echo "Bonjour $USER"

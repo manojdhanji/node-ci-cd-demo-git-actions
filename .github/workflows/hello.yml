@@ -2,7 +2,7 @@ name: Greet User
 on: push
 jobs:
   greet:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: greet user in en
         run: echo "Hello $USER"

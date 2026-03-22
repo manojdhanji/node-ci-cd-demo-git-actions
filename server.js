@@ -11,8 +11,11 @@ const httpServer = httpInstance.createServer((req, res) => {
     // End the response
     res.end();
 });
+if (require.main === module) {
 
-// Setup the server to listen on port 8080
-httpServer.listen(portNumber, () => {
-    console.log('Server is listening on port ' + portNumber);
-});
+    // Setup the server to listen on port 8080
+    httpServer.listen(portNumber, () => {
+        console.log('Server is listening on port ' + portNumber);
+    });
+}
+module.exports = httpServer;

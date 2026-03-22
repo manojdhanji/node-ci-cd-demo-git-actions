@@ -1,16 +1,21 @@
 name: Deploy
 on: push
+defaults:
+  run:
+    working-directory: my-project
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         #uses: actions/checkout@v4
-        run:
+        run: |
           echo "Cloning repository"
           echo "${{toJson(github)}}"
           git clone https://github.com/${{github.repository}}.git my-project
-          cd my-project && ls -lt
+          cd my-project
+          ls -lt
       - name: Set up node
         uses: actions/setup-node@v4
         with: 

@@ -23,6 +23,6 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Completed
-        run: echo "Tests run successfully `test $? -eq 0  && echo true || echo false`
+        run: echo "Tests run successfully `test $? -eq 0  && echo true || echo false`"
       
 

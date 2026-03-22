@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build": "echo '.js project does not need build'",
+    "start": "node server.js",
      "test": "jest"
   },
   "keywords": [],

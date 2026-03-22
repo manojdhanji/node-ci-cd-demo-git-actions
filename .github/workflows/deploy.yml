@@ -16,13 +16,27 @@ jobs:
         uses: actions/setup-node@v4
         with: 
           node-version: 22
-      - name: Print node version
-        run: node --version
       - name: Install dependencies
         run: npm install
       - name: Run tests
         run: npm test
-      - name: Completed
-        run: echo "Tests run successfully `test $? -eq 0  && echo true || echo false`"
-      
-
+  build:
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up node
+        uses: actions/setup-node@v4
+        with: 
+          node-version: 22
+      - name: Install dependencies
+        run: npm install
+      - name: Build project
+        run: npm run build
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo 'Deployment completed'

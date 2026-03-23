@@ -1,5 +1,5 @@
 const httpServer = require('../server.js');
-const http = require('http');
+const http = require('node:http');
 
 describe('HTTP Server Tests', () => {
 

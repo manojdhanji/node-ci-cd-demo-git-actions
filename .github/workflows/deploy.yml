@@ -18,7 +18,7 @@ jobs:
           node-version: 22
       - name: Cache
         id: cache
-        uses: actions/cached@v4
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{runner.os}}-node-${{hashFiles('**/package-lock.json')}}
